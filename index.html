@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>4 meses junto a ti ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f8b6c8;
+            color: #3a3033;
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
+        }
+
+        section {
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        button {
+            font-family: 'Playfair Display', serif;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           ANIMACIONES
+        ========================= */
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes aparecerArriba {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes aparecerFoto {
+            from {
+                opacity: 0;
+                transform: scale(0.92);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes aparecerGrande {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Animación para TODOS los ¿SEGUIMOS? */
+
+        @keyframes apareceSeguimos {
+            from {
+                opacity: 0;
+                transform: translateY(15px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .btn-seguimos {
+            animation: apareceSeguimos 1s ease forwards;
+            transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+        }
+
+        .btn-seguimos:hover {
+            transform: scale(1.06);
+            background: white;
+            color: #e88ca7;
+        }
+
+        .btn-seguimos:active {
+            transform: scale(0.94);
+        }
+
+
+        /* =========================
+           PORTADA
+        ========================= */
+
+        .portada {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            color: white;
+        }
+
+        .titulo {
+            font-size: 42px;
+            font-weight: 500;
+            margin: 0;
+            animation: aparecerArriba 1.3s ease forwards;
+        }
+
+        .subtitulo {
+            font-size: 20px;
+            margin-top: 25px;
+            opacity: 0;
+            animation: aparecerArriba 1.3s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        .btn {
+            margin-top: 45px;
+            padding: 13px 30px;
+            border-radius: 30px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+            opacity: 0;
+            animation: aparecerArriba 1.3s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #e88ca7;
+        }
+
+
+        /* =========================
+           MUSICA
+        ========================= */
+
+        .musica {
+            display: none;
+            min-height: 100vh;
+            padding: 55px 20px 60px;
+            text-align: center;
+        }
+
+        .texto-musica {
+            font-size: 23px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto 35px;
+            animation: aparecerArriba 1.2s ease forwards;
+        }
+
+        .foto-musica {
+            width: 230px;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 15px;
+            display: block;
+            margin: 0 auto 25px;
+            animation: aparecerFoto 1.2s ease forwards;
+        }
+
+        .nombre-cancion {
+            font-size: 19px;
+            margin-bottom: 18px;
+            animation: aparecerArriba 1.2s ease forwards;
+        }
+
+        .artista {
+            font-size: 15px;
+            margin-top: -12px;
+            margin-bottom: 25px;
+        }
+
+        .spotify {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            animation: aparecerArriba 1.3s ease forwards;
+        }
+
+        .btn-musica {
+            margin-top: 40px;
+            padding: 11px 25px;
+            border-radius: 25px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 15px;
+        }
+
+        .btn-musica:hover {
+            background: white;
+            color: #e88ca7;
+        }
+
+
+        /* =========================
+           SOBRE ELLA
+        ========================= */
+
+        .sobre-ella {
+            display: none;
+            min-height: 100vh;
+            padding: 45px 20px 60px;
+            text-align: center;
+        }
+
+        .titulo-ella {
+            font-size: 27px;
+            font-weight: 400;
+            margin-bottom: 35px;
+            color: white;
+            animation: aparecerArriba 1.2s ease forwards;
+        }
+
+        .mosaico {
+            max-width: 700px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px 18px;
+        }
+
+        .item-ella {
+            text-align: center;
+        }
+
+        .foto-ella {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 14px;
+            animation: aparecerFoto 1.2s ease forwards;
+        }
+
+        .texto-ella {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-top: 13px;
+        }
+
+        .btn-ella {
+            margin-top: 45px;
+            padding: 11px 25px;
+            border-radius: 25px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 15px;
+        }
+
+        .btn-ella:hover {
+            background: white;
+            color: #e88ca7;
+        }
+
+
+        /* =========================
+           HISTORIA
+        ========================= */
+
+        .historia {
+            display: none;
+            min-height: 100vh;
+            padding: 50px 20px 60px;
+            text-align: center;
+        }
+
+        .titulo-historia {
+            font-size: 27px;
+            font-weight: 400;
+            margin: 0 0 40px;
+            color: white;
+            animation: aparecerArriba 1.2s ease forwards;
+        }
+
+        .marco-historia {
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 150px 1fr 150px;
+            grid-template-rows: auto auto;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .foto-marco {
+            width: 135px;
+            height: 135px;
+            object-fit: cover;
+            border-radius: 12px;
+            animation: aparecerFoto 1.2s ease forwards;
+        }
+
+        .foto1 {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .foto2 {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .foto3 {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .foto4 {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        .texto-historia {
+            grid-column: 2;
+            grid-row: 1 / 3;
+
+            font-size: 17px;
+            line-height: 1.75;
+            text-align: center;
+
+            color: #3a3033;
+
+            animation: aparecerArriba 1.5s ease forwards;
+        }
+
+        .btn-historia {
+            margin-top: 50px;
+            padding: 11px 25px;
+            border-radius: 25px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 15px;
+        }
+
+        .btn-historia:hover {
+            background: white;
+            color: #e88ca7;
+        }
+
+
+        /* =========================
+           SECRETO 1
+        ========================= */
+
+        .secreto1 {
+            display: none;
+            min-height: 100vh;
+            padding: 50px 25px;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .titulo-secreto {
+            font-size: 29px;
+            margin-bottom: 25px;
+            color: white;
+            animation: aparecerArriba 1.2s ease forwards;
+        }
+
+        .intro-secreto {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 35px;
+        }
+
+        .btn-secreto {
+            padding: 13px 27px;
+            border-radius: 28px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 15px;
+        }
+
+        .btn-secreto:hover {
+            background: white;
+            color: #e88ca7;
+        }
+
+        .dato {
+            display: none;
+            max-width: 700px;
+            margin-top: 30px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #3a3033;
+            animation: aparecerArriba 1s ease forwards;
+        }
+
+        .btn-siguiente {
+            margin-top: 40px;
+            padding: 11px 25px;
+            border-radius: 25px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           SECRETO 2
+        ========================= */
+
+        .secreto2 {
+            display: none;
+            min-height: 100vh;
+            padding: 55px 20px;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .texto-cancion-secreta {
+            max-width: 700px;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .spotify-secreto {
+            width: 100%;
+            max-width: 500px;
+        }
+
+
+        /* =========================
+           SECRETO 3
+        ========================= */
+
+        .secreto3 {
+            display: none;
+            min-height: 100vh;
+            padding: 50px 20px 60px;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .texto-foto-secreta {
+            max-width: 700px;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .foto-secreta {
+            width: min(90%, 420px);
+            max-height: 500px;
+            object-fit: contain;
+            border-radius: 15px;
+            animation: aparecerFoto 1.2s ease forwards;
+        }
+
+
+        /* =========================
+           SECRETO 4
+        ========================= */
+
+        .secreto4 {
+            display: none;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-no {
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .btn-no:hover {
+            background: white;
+            color: #e88ca7;
+        }
+
+        .curiosa {
+            display: none;
+            font-size: 22px;
+            margin-bottom: 25px;
+            animation: aparecerArriba 0.8s ease forwards;
+        }
+
+        .btn-pues {
+            display: none;
+            padding: 13px 30px;
+            border-radius: 28px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 16px;
+            animation: aparecerGrande 0.8s ease forwards;
+        }
+
+        .acrostico {
+            display: none;
+            margin-top: 35px;
+            max-width: 650px;
+            animation: aparecerArriba 1s ease forwards;
+        }
+
+        .linea-acrostico {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 13px 0;
+            text-align: left;
+        }
+
+        .letra {
+            font-size: 27px;
+            font-weight: 600;
+            width: 35px;
+            min-width: 35px;
+        }
+
+        .frase {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+
+        /* =========================
+           FINAL
+        ========================= */
+
+        .final {
+            display: none;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .final h1 {
+            font-size: 38px;
+            font-weight: 400;
+            color: white;
+            animation: aparecerGrande 2s ease forwards;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .titulo {
+                font-size: 32px;
+            }
+
+            .subtitulo {
+                font-size: 17px;
+            }
+
+            .musica {
+                padding: 45px 18px 55px;
+            }
+
+            .texto-musica {
+                font-size: 19px;
+            }
+
+            .foto-musica {
+                width: 200px;
+                height: 250px;
+            }
+
+            .titulo-ella {
+                font-size: 23px;
+            }
+
+            .mosaico {
+                gap: 22px 12px;
+            }
+
+            .foto-ella {
+                height: 180px;
+            }
+
+            .texto-ella {
+                font-size: 13px;
+                line-height: 1.55;
+            }
+
+            .historia {
+                padding: 40px 12px 50px;
+            }
+
+            .titulo-historia {
+                font-size: 23px;
+                margin-bottom: 30px;
+            }
+
+            .marco-historia {
+                grid-template-columns: 65px 1fr 65px;
+                gap: 12px;
+            }
+
+            .foto-marco {
+                width: 62px;
+                height: 62px;
+                border-radius: 8px;
+            }
+
+            .texto-historia {
+                font-size: 12px;
+                line-height: 1.6;
+            }
+
+            .texto-cancion-secreta {
+                font-size: 16px;
+                line-height: 1.65;
+            }
+
+            .texto-foto-secreta {
+                font-size: 16px;
+                line-height: 1.65;
+            }
+
+            .dato {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .titulo-secreto {
+                font-size: 25px;
+            }
+
+            .curiosa {
+                font-size: 20px;
+            }
+
+            .linea-acrostico {
+                gap: 10px;
+                margin: 12px 0;
+            }
+
+            .letra {
+                font-size: 23px;
+                width: 30px;
+                min-width: 30px;
+            }
+
+            .frase {
+                font-size: 14px;
+            }
+
+            .final h1 {
+                font-size: 29px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         PORTADA
+    ========================= -->
+
+    <section class="portada" id="portada">
+
+        <h1 class="titulo">
+            4 MESES JUNTO A TI
+        </h1>
+
+        <p class="subtitulo">
+            TE PREPARÉ ALGO, ESPERO QUE TE GUSTE
+        </p>
+
+        <button class="btn" onclick="empezar()">
+            EMPEZAMOS
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         MUSICA
+    ========================= -->
+
+    <section class="musica" id="musica">
+
+        <p class="texto-musica">
+            Melodías que al escuchar lo único que hacen es recordarme a ti
+        </p>
+
+        <img
+            src="fotos/foto-ella.jpg"
+            alt="Ella"
+            class="foto-musica"
+        >
+
+        <div class="nombre-cancion">
+            Amor, Amor, Amor
+        </div>
+
+        <div class="artista">
+            Luis Miguel
+        </div>
+
+        <div class="spotify">
+
+            <iframe
+                data-testid="embed-iframe"
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/1k4GYtmW7edpJ9uhQmzO66?utm_source=generator&si=c961e839bf754014"
+                width="100%"
+                height="152"
+                frameBorder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+        <button
+            class="btn-musica btn-seguimos"
+            onclick="irElla()">
+            ¿SEGUIMOS?
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE ELLA
+    ========================= -->
+
+    <section class="sobre-ella" id="sobreElla">
+
+        <h2 class="titulo-ella">
+            Hay tantas cosas de ti que me encantan...
+        </h2>
+
+        <div class="mosaico">
+
+            <div class="item-ella">
+
+                <img
+                    src="fotos/foto-ella1.jpg"
+                    class="foto-ella"
+                    alt="Ella"
+                >
+
+                <p class="texto-ella">
+                    Tus ojos son tan redonditos y grandes,
+                    que cuando los miro parecen brillar.
+                    En ellos encuentro cada expresión tuya
+                    y siempre puedo ver la verdad de lo que sientes.
+                </p>
+
+            </div>
+
+
+            <div class="item-ella">
+
+                <img
+                    src="fotos/foto-ella2.jpg"
+                    class="foto-ella"
+                    alt="Ella"
+                >
+
+                <p class="texto-ella">
+                    Tus labios tienen algo que no sé explicar,
+                    porque cada vez que los beso me hacen volar.
+                    Me hacen sentir renovado y por eso los declaro
+                    oficialmente mi vicio favorito.
+                </p>
+
+            </div>
+
+
+            <div class="item-ella">
+
+                <img
+                    src="fotos/foto-ella3.jpg"
+                    class="foto-ella"
+                    alt="Ella"
+                >
+
+                <p class="texto-ella">
+                    Tus cachetitos son tan suaves y tiernos
+                    que siempre quiero acercarme y molestarlos.
+                    Me encanta hacerte cosquillas y sentirlos,
+                    porque son más suaves que una almohada.
+                </p>
+
+            </div>
+
+
+            <div class="item-ella">
+
+                <img
+                    src="fotos/foto-ella4.jpg"
+                    class="foto-ella"
+                    alt="Ella"
+                >
+
+                <p class="texto-ella">
+                    Tu forma de ser, aunque reservada,
+                    siempre busca dejar una presencia en todo.
+                    Sabes demostrar cariño y aprecio,
+                    y cada día me das más razones para nunca alejarme de ti.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button
+            class="btn-ella btn-seguimos"
+            onclick="irHistoria()">
+            ¿SEGUIMOS?
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORIA
+    ========================= -->
+
+    <section class="historia" id="historia">
+
+        <h2 class="titulo-historia">
+            Y quien lo iba a decir...
+        </h2>
+
+        <div class="marco-historia">
+
+            <img
+                src="fotos/foto-ella5.jpg"
+                alt="Nosotros"
+                class="foto-marco foto1"
+            >
+
+            <img
+                src="fotos/foto-ella6.jpg"
+                alt="Nosotros"
+                class="foto-marco foto2"
+            >
+
+            <p class="texto-historia">
+                Y quien lo iba a decir... siempre pense y quize llegar a este punto contigo de manera oficial, nunca perdi esa esperanza y ahora que estamos aqui, y los recuerdos y momentos increibles junto a ti, los bailes junto a ti, las salidas, las veces que nos vemos los sabados y verte cada dia es lo que me pone contento, yo se que hemos pasado por cosas dificiles y que talvez no tomamos las mejores decisiones en el momento pero pues creo que con amor, si es posible arreglar cualquier cosa y asi lo haremos siempre, cada vez mejorando poco a poco. Porque si hay algo que disfruto mucho y me da paz, es tu presencia, es escuchar tu voz, poder verte y enamorarme en cada mirada, en cada abrazo, en cada momento, en cada risa y pues mira ya hemos cumplido cuatro meses amor mio... Si 4 meses!!! y si me vuelven a preguntar, sera contigo, hoy y siempre y si no es contigo, entonces con nadie, te amo mucho amorson, eres lo mejor que me ha pasado, aunque no te lo diga seguido, pero disfruto todo contigo y quiero que siga siendo asi por toda la vida, asi que mi vida hermosa, te amo mucho y espero que podamos seguir juntos mucho tiempo mas, y con mucho tiempo mas, me refiero a toda la vida, besos y apapachos mi vida, TE AMO MUCHO
+            </p>
+
+            <img
+                src="fotos/foto-ella7.jpg"
+                alt="Nosotros"
+                class="foto-marco foto3"
+            >
+
+            <img
+                src="fotos/foto-ella8.jpg"
+                alt="Nosotros"
+                class="foto-marco foto4"
+            >
+
+        </div>
+
+        <button
+            class="btn-historia btn-seguimos"
+            onclick="irSecreto1()">
+            ¿SEGUIMOS?
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         SECRETO 1
+    ========================= -->
+
+    <section class="secreto1" id="secreto1">
+
+        <h2 class="titulo-secreto">
+            Hay algo que quiero contarte...
+        </h2>
+
+        <p class="intro-secreto">
+            Pero primero tendrás que descubrirlo.
+        </p>
+
+        <button
+            class="btn-secreto"
+            onclick="mostrarDato()">
+            DATO CURIOSO
+        </button>
+
+        <p class="dato" id="dato">
+
+            <strong>Dato Curioso:</strong>
+            Sabias que contigo me siento en paz y libertad?
+            contigo me siento yo, cada cosa que hacemos juntos cuando nos vemos,
+            todo es feliz, divertido, incluso amor mio, en los momentos malos,
+            son momentos que se quedan guardados y que nos ayudan a construir
+            cosas mes con mes y por eso me siento una persona muy afortunado y
+            agradecido con el destino por haberte cruzado en mi camino, y que
+            sobre todo, me hayas dado el privilegio de estar contigo
+
+        </p>
+
+        <button
+            class="btn-siguiente btn-seguimos"
+            id="btnDatoSiguiente"
+            onclick="irSecreto2()"
+            style="display:none;"
+        >
+            ¿SEGUIMOS?
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         SECRETO 2
+    ========================= -->
+
+    <section class="secreto2" id="secreto2">
+
+        <p class="texto-cancion-secreta">
+
+            Yo se que talvez la cancion no tendra mayor significado,
+            pero quiero que sepas que cuando la escuchaba, me hacia recordar
+            mucho a ti, solo que nunca te lo conte, es la cancion con la que
+            mas te pienso
+
+        </p>
+
+        <div class="spotify-secreto">
+
+            <iframe
+                data-testid="embed-iframe"
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/0fKK51bU6lcCCwdNnv64t3?utm_source=generator&si=02732da529824d4d"
+                width="100%"
+                height="152"
+                frameBorder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+        <button
+            class="btn-siguiente btn-seguimos"
+            onclick="irSecreto3()">
+            ¿SEGUIMOS?
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         SECRETO 3
+    ========================= -->
+
+    <section class="secreto3" id="secreto3">
+
+        <p class="texto-foto-secreta">
+
+            Esta es la foto que aunque talvez a ti te provoque algo de pena,
+            es la foto que aunque mire una y mil veces mas, siempre me provocara
+            esa ternura de la primera vez que la vi, esa foto la tiene todo,
+            esencai, ternura y sobre todo, a la chica que ao con locura
+
+        </p>
+
+        <img
+            src="fotos/foto-ella9.jpg"
+            alt="Una foto especial"
+            class="foto-secreta"
+        >
+
+        <button
+            class="btn-siguiente btn-seguimos"
+            onclick="irSecreto4()">
+            ¿SEGUIMOS?
+        </button>
+
+    </section>
+
+
+    <!-- =========================
+         SECRETO 4
+    ========================= -->
+
+    <section class="secreto4" id="secreto4">
+
+        <button
+            class="btn-no"
+            id="btnNo"
+            onclick="mostrarCuriosa()"
+        >
+            NO LO PRESIONES !!!
+        </button>
+
+
+        <div id="segundaParte" style="display:none;">
+
+            <p class="curiosa" id="curiosa">
+                Apoco si muy curiosa
+            </p>
+
+            <button
+                class="btn-pues"
+                id="btnPues"
+                onclick="mostrarAcrostico()"
+            >
+                PUES YA QUE
+            </button>
+
+        </div>
+
+
+        <div class="acrostico" id="acrostico">
+
+            <div class="linea-acrostico">
+                <span class="letra">J</span>
+                <span class="frase">
+                    Juntos construimos algo muy bonito
+                </span>
+            </div>
+
+            <div class="linea-acrostico">
+                <span class="letra">H</span>
+                <span class="frase">
+                    Haces mis días mucho más felices
+                </span>
+            </div>
+
+            <div class="linea-acrostico">
+                <span class="letra">A</span>
+                <span class="frase">
+                    A tu lado puedo ser yo
+                </span>
+            </div>
+
+            <div class="linea-acrostico">
+                <span class="letra">N</span>
+                <span class="frase">
+                    Nunca dejo de elegirte cada día
+                </span>
+            </div>
+
+            <div class="linea-acrostico">
+                <span class="letra">E</span>
+                <span class="frase">
+                    Eres mi paz y mi alegría
+                </span>
+            </div>
+
+            <div class="linea-acrostico">
+                <span class="letra">L</span>
+                <span class="frase">
+                    Lo nuestro quiero seguir construyéndolo contigo
+                </span>
+            </div>
+
+            <div class="linea-acrostico">
+                <span class="letra">Y</span>
+                <span class="frase">
+                    Y yo te amo muchísimo, mi vida
+                </span>
+            </div>
+
+            <button
+                class="btn-siguiente btn-seguimos"
+                onclick="irFinal()">
+                ¿SEGUIMOS?
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL
+    ========================= -->
+
+    <section class="final" id="final">
+
+        <h1>
+            CONTIGO EN ESTA Y EN OTRA VIDA 💘
+        </h1>
+
+    </section>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        function ocultarTodo() {
+
+            document.getElementById("portada").style.display = "none";
+            document.getElementById("musica").style.display = "none";
+            document.getElementById("sobreElla").style.display = "none";
+            document.getElementById("historia").style.display = "none";
+            document.getElementById("secreto1").style.display = "none";
+            document.getElementById("secreto2").style.display = "none";
+            document.getElementById("secreto3").style.display = "none";
+            document.getElementById("secreto4").style.display = "none";
+            document.getElementById("final").style.display = "none";
+
+            window.scrollTo(0, 0);
+        }
+
+
+        function empezar() {
+
+            ocultarTodo();
+
+            document.getElementById("musica").style.display = "block";
+
+        }
+
+
+        function irElla() {
+
+            ocultarTodo();
+
+            document.getElementById("sobreElla").style.display = "block";
+
+        }
+
+
+        function irHistoria() {
+
+            ocultarTodo();
+
+            document.getElementById("historia").style.display = "block";
+
+        }
+
+
+        function irSecreto1() {
+
+            ocultarTodo();
+
+            document.getElementById("secreto1").style.display = "flex";
+
+        }
+
+
+        function mostrarDato() {
+
+            document.getElementById("dato").style.display = "block";
+
+            document.getElementById("btnDatoSiguiente").style.display = "inline-block";
+
+        }
+
+
+        function irSecreto2() {
+
+            ocultarTodo();
+
+            document.getElementById("secreto2").style.display = "flex";
+
+        }
+
+
+        function irSecreto3() {
+
+            ocultarTodo();
+
+            document.getElementById("secreto3").style.display = "flex";
+
+        }
+
+
+        function irSecreto4() {
+
+            ocultarTodo();
+
+            document.getElementById("secreto4").style.display = "flex";
+
+        }
+
+
+        function mostrarCuriosa() {
+
+            document.getElementById("btnNo").style.display = "none";
+
+            document.getElementById("segundaParte").style.display = "block";
+
+            document.getElementById("curiosa").style.display = "block";
+
+            document.getElementById("btnPues").style.display = "inline-block";
+
+        }
+
+
+        function mostrarAcrostico() {
+
+            document.getElementById("segundaParte").style.display = "none";
+
+            document.getElementById("acrostico").style.display = "block";
+
+        }
+
+
+        function irFinal() {
+
+            ocultarTodo();
+
+            document.getElementById("final").style.display = "flex";
+
+        }
+
+    </script>
+
+</body>
+</html>
